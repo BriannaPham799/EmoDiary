@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/white"
-    tools:context=".login">
+    tools:context=".Login">
 
 
 

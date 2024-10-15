@@ -2,22 +2,13 @@ package com.example.emodiary;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-
-public class login extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     /**EditText loginEmail, loginPassword;
     Button loginButton;
@@ -75,14 +66,14 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),Main2Activity.class));
                         }else {
-                            Toast.makeText(login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                 });**/
-                Intent intent = new Intent(login.this, Main2Activity.class);
+                Intent intent = new Intent(Login.this, Main2Activity.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +83,7 @@ public class login extends AppCompatActivity {
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(login.this, Register.class);
+                Intent intent = new Intent(Login.this, Register.class);
                 startActivity(intent);
             }
         });

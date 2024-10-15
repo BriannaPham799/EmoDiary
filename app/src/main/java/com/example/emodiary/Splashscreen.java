@@ -14,8 +14,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class Splashscreen extends AppCompatActivity {
 
     private static int DELAY_TIME = 4000;
@@ -52,7 +50,7 @@ public class Splashscreen extends AppCompatActivity {
                 //fAuth = FirebaseAuth.getInstance();
 
                 //AutoLogin
-                Intent intent = new Intent(getApplicationContext(), login.class);
+                Intent intent = new Intent(getApplicationContext(), Login.class);
 
                  Pair[] pairs =  new  Pair[2];
                  pairs[0]= new Pair(imageView,"logo");
@@ -64,7 +62,7 @@ public class Splashscreen extends AppCompatActivity {
                 /**if(fAuth.getCurrentUser() != null){
                     i = new Intent(Splashscreen.this,Main2Activity.class);
                 }else
-                    i = new Intent(Splashscreen.this,login.class);**/
+                    i = new Intent(Splashscreen.this,Login.class);**/
 
 
 

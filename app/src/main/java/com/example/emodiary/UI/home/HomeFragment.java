@@ -58,58 +58,27 @@ public class HomeFragment extends Fragment {
 
         //upcomingArray1 = shareviewmodel.upcomingArray;
 
-
-
-
-
-
-
-
-        binding.commuteAction.setOnClickListener(new View.OnClickListener() {
+        binding.calendarAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(getView()).navigate(R.id.nav_to_bus);
-
-            }
-        });
-        binding.locationsAction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //NavController navController = Navigation.findNavController(getActivity().getParent(), R.id.nav_host_fragment_content_main2);
-                //navController.navigate(R.id.nav_commute);
-
-                Navigation.findNavController(getView()).navigate(R.id.nav_to_locations);
+                //Navigation.findNavController(getView()).navigate(R.id.nav_to_bus);
 
             }
         });
 
-
-        binding.taskAction.setOnClickListener(new View.OnClickListener() {
+        binding.reminderAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(getView()).navigate(R.id.nav_to_tasks);
-
-
+                //Navigation.findNavController(getView()).navigate(R.id.nav_to_tasks);
             }
         });
 
-        binding.notesAction.setOnClickListener(new View.OnClickListener() {
+        binding.diaryAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(getView()).navigate(R.id.nav_to_notes);
-
-
+                //Navigation.findNavController(getView()).navigate(R.id.nav_to_notes);
             }
         });
-
-
-
-
-
-
-
-
-
         return root;
     }
 
@@ -161,11 +130,7 @@ public class HomeFragment extends Fragment {
 
                 if (i == 5)
                     break;
-
-
             }
-
-
         //}
 
         pending.setText(String.valueOf(shareviewmodel.pending.getValue()));
@@ -216,20 +181,9 @@ public class HomeFragment extends Fragment {
                 System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                 shareviewmodel.updateDashboard(task);
                 setupAdapter();
-
-
             }
-
-
         }
         GetUpcomingTasks upcomingTasks = new GetUpcomingTasks();
         upcomingTasks.execute();
-
-
-
-
-
-
-
     }
 }

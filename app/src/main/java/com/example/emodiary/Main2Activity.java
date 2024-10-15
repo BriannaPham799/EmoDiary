@@ -29,12 +29,12 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class Main2Activity extends AppCompatActivity implements createTaskFragment.setRefreshListener{
 
-    /**private AppBarConfiguration mAppBarConfiguration;
+    private AppBarConfiguration mAppBarConfiguration;
     private ActivityMain2Binding binding;
-    FirebaseAuth fAuth;
+    /**FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    FirebaseUser user;
-    String userId;**/
+    FirebaseUser user;**/
+    //String userId;
 
 
     @Override
@@ -45,7 +45,7 @@ public class Main2Activity extends AppCompatActivity implements createTaskFragme
         /**fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         user = fAuth.getCurrentUser();
-        userId = fAuth.getCurrentUser().getUid();
+        userId = fAuth.getCurrentUser().getUid();**/
 
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -62,7 +62,7 @@ public class Main2Activity extends AppCompatActivity implements createTaskFragme
 
 
         //CONTROLS DATA  ON APP DRAWER
-        DocumentReference documentReference = fStore.collection("users").document(userId);
+        /**DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
@@ -75,7 +75,7 @@ public class Main2Activity extends AppCompatActivity implements createTaskFragme
                     Log.d("tag", "onEvent: Document do not exists");
                 }
             }
-        });
+        });**/
 
         //LOGOUT
         navigationView.getMenu().findItem(R.id.logout).setOnMenuItemClickListener(menuItem -> {
@@ -93,14 +93,12 @@ public class Main2Activity extends AppCompatActivity implements createTaskFragme
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);**/
-
-
+        NavigationUI.setupWithNavController(navigationView, navController);
 
     }
 
-    /**public void logout(){
-        FirebaseAuth.getInstance().signOut();
+    public void logout(){
+        //FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Splashscreen.class));
         overridePendingTransition(R.anim.slide_up,R.anim.slide_down);
 
@@ -119,11 +117,11 @@ public class Main2Activity extends AppCompatActivity implements createTaskFragme
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main2);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }**/
+    }
 
     @Override
     public void refresh() {
-        /**TaskFragment m = new TaskFragment();
-        m.getSavedTasks();**/
+        //TaskFragment m = new TaskFragment();
+        //m.getSavedTasks();
     }
 }
